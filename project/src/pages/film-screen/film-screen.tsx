@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import Footer from '../../components/footer/footer';
 import Logo from '../../components/logo/logo';
 import UserBlock from '../../components/user-block/user-block';
@@ -5,6 +6,10 @@ import UserBlock from '../../components/user-block/user-block';
 export default function FilmScreen(): JSX.Element {
   return (
     <>
+      <Helmet>
+        {/* FIXME: Add film name */}
+        <title>WTW: Название фильма</title>
+      </Helmet>
       <section className="film-card film-card--full">
         <div className="film-card__hero">
           <div className="film-card__bg">
