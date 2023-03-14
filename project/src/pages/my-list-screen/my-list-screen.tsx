@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import Footer from '../../components/footer/footer';
 import Logo from '../../components/logo/logo';
 import UserBlock from '../../components/user-block/user-block';
@@ -5,6 +6,9 @@ import UserBlock from '../../components/user-block/user-block';
 export default function MyListScreen(): JSX.Element {
   return (
     <div className="user-page">
+      <Helmet>
+        <title>WTW: Список фильмов</title>
+      </Helmet>
       <header className="page-header user-page__head">
         <Logo />
 

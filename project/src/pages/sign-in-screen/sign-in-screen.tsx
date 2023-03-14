@@ -1,9 +1,13 @@
+import { Helmet } from 'react-helmet-async';
 import Footer from '../../components/footer/footer';
 import Logo from '../../components/logo/logo';
 
 export default function SignInScreen(): JSX.Element {
   return (
     <div className="user-page">
+      <Helmet>
+        <title>WTW: Аторизацию пользователя</title>
+      </Helmet>
       <header className="page-header user-page__head">
         <Logo />
 
