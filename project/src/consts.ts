@@ -6,3 +6,9 @@ export enum AppRouteEnum {
   AddReview = 'films/:id/review',
   Player= '/player/:id'
 }
+
+export enum AuthorizationStatusEnum {
+  Auth = 'AUTH',
+  NoAuth = 'NO_AUTH',
+  Unknown = 'UNKNOWN',
+}

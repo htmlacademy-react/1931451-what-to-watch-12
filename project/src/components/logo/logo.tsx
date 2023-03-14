@@ -1,11 +1,13 @@
+import classNames from 'classnames';
 import { NavLink } from 'react-router-dom';
-import { AppRouteEnum } from '../../types/app-route.enum';
+import { AppRouteEnum } from '../../consts';
+
 
 type FooterProp = {
-  isFooter?: boolean;
+  isLight?: boolean;
 }
 
-export default function Logo({isFooter}: FooterProp): JSX.Element {
+export default function Logo({isLight}: FooterProp): JSX.Element {
   const getStyleForNavLink = ({isActive}: {isActive: boolean}) =>
     isActive
       ? { pointerEvents: ('none' as React.CSSProperties['pointerEvents'])}
@@ -15,7 +17,9 @@ export default function Logo({isFooter}: FooterProp): JSX.Element {
     <div className="logo">
       <NavLink
         to={AppRouteEnum.Main}
-        className={isFooter ? 'logo__link logo__link--light' : 'logo__link'}
+        className={classNames('logo__link', {
+          'logo__link--light': isLight
+        })}
         style={getStyleForNavLink}
         end
       >
