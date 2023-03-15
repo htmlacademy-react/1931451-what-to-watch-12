@@ -37,6 +37,7 @@ export default function AddReviewScreen(): JSX.Element {
         </div>
       </div>
 
+      {/* TODO: Добавить в отдельный компонент и замапить */}
       <div className="add-review">
         <form action="#" className="add-review__form">
           <div className="rating">

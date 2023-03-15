@@ -75,6 +75,7 @@ export default function MainScreen({ promoFilm }: MainScreenProp): JSX.Element {
         </div>
       </section>
 
+      {/* TODO: Замапить по жанрам */}
       <div className="page-content">
         <section className="catalog">
           <h2 className="catalog__title visually-hidden">Catalog</h2>

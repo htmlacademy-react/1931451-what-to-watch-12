@@ -1753,3 +1753,7 @@ main {
   font-size: 1em;
   text-decoration: underline;
 }
+
+.logo__link.active {
+  pointer-events: none;
+}
