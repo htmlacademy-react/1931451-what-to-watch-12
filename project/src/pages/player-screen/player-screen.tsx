@@ -1,6 +1,12 @@
+import { Helmet } from 'react-helmet-async';
+
 export default function PlayerScreen(): JSX.Element {
   return (
     <div className="player">
+      <Helmet>
+        {/* FIXME: Добавить идентификатор фильма */}
+        <title>WTW: Смотреть фильм онлайн</title>
+      </Helmet>
       <video src="#" className="player__video" poster="img/player-poster.jpg"></video>
 
       <button type="button" className="player__exit">Exit</button>
