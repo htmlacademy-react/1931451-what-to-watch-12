@@ -1639,6 +1639,7 @@ main {
 }
 
 .user-block__avatar {
+  display: inline-block;
   width: 63px;
   height: 63px;
   overflow: hidden;
@@ -1754,6 +1755,7 @@ main {
   text-decoration: underline;
 }
 
-.logo__link.active {
+.logo__link.active,
+.film-nav__link.active {
   pointer-events: none;
 }

@@ -4,12 +4,15 @@ import Footer from '../../components/footer/footer';
 import Logo from '../../components/logo/logo';
 import UserBlock from '../../components/user-block/user-block';
 import { PromoFilm } from '../../index';
+import { FilmType } from '../../types/film.type';
+import { MAX_FILMS_LIST_LENGTH } from './main-screen.const';
 
-type MainScreenProp = {
+type MainScreenProps = {
   promoFilm: typeof PromoFilm;
+  films: FilmType[];
 };
 
-export default function MainScreen({ promoFilm }: MainScreenProp): JSX.Element {
+export default function MainScreen({ promoFilm, films }: MainScreenProps): JSX.Element {
   return (
     <>
       <Helmet>
@@ -133,7 +136,10 @@ export default function MainScreen({ promoFilm }: MainScreenProp): JSX.Element {
             </li>
           </ul>
 
-          <FilmsList />
+          <FilmsList
+            films = {films}
+            maxLength = { MAX_FILMS_LIST_LENGTH }
+          />
 
           <div className="catalog__more">
             <button className="catalog__button" type="button">

@@ -10,6 +10,6 @@ export default function PrivateRoute({authorizationStatus, children}: PrivateRou
   return (
     authorizationStatus === AuthorizationStatusEnum.Auth
       ? children
-      : <Navigate to={AppRouteEnum.SignIn} />
+      : <Navigate to={AppRouteEnum.SignIn} replace={false} />
   );
 }
