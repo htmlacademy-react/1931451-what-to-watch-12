@@ -2,11 +2,11 @@ import classNames from 'classnames';
 import { NavLink } from 'react-router-dom';
 import { AppRouteEnum } from '../../consts';
 
-type FooterProp = {
+type FooterProps = {
   isLight?: boolean;
 };
 
-export default function Logo({ isLight }: FooterProp): JSX.Element {
+export default function Logo({ isLight }: FooterProps): JSX.Element {
   const getClassForNavLink = ({ isActive }: { isActive: boolean }) => isActive;
   const logoClass = classNames({
     'logo__link': true,

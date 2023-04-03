@@ -1,23 +1,34 @@
 import { Helmet } from 'react-helmet-async';
+import { FilmType } from '../../types/film.type';
+import { useParams } from 'react-router-dom';
+import NotFoundScreen from '../not-found-screen/not-found-screen';
+import { getModifiedRunTime } from '../../utils/utils';
 
-export default function PlayerScreen(): JSX.Element {
-  return (
+type PlayerScreenProps = {
+  films: FilmType[];
+}
+
+export default function PlayerScreen({films}: PlayerScreenProps): JSX.Element {
+  const params = useParams();
+  const film = films.find((data) => String(data.id) === params.id);
+
+  return film ? (
     <div className="player">
       <Helmet>
-        {/* FIXME: Добавить идентификатор фильма */}
-        <title>WTW: Смотреть фильм онлайн</title>
+        <title>WTW: Смотреть фильм {film.name} онлайн</title>
       </Helmet>
-      <video src="#" className="player__video" poster="img/player-poster.jpg"></video>
+      <video src={film.videoLink} className="player__video" poster={film.backgroundImage}></video>
 
+      {/* FIXME: Сделать выход из плеера */}
       <button type="button" className="player__exit">Exit</button>
 
       <div className="player__controls">
         <div className="player__controls-row">
           <div className="player__time">
-            <progress className="player__progress" value="30" max="100"></progress>
-            <div className="player__toggler" style={{left: '30%'}}>Toggler</div>
+            <progress className="player__progress" value="0" max="100"></progress>
+            <div className="player__toggler" style={{left: '0%'}}>Toggler</div>
           </div>
-          <div className="player__time-value">1:30:29</div>
+          <div className="player__time-value">{getModifiedRunTime(film.runTime)}</div>
         </div>
 
         <div className="player__controls-row">
@@ -38,5 +49,5 @@ export default function PlayerScreen(): JSX.Element {
         </div>
       </div>
     </div>
-  );
+  ) : <NotFoundScreen />;
 }
